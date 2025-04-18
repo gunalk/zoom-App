@@ -30,7 +30,7 @@ function App() {
         const name = context?.displayName || "Zoom User";
         setUserName(name);
   
-        await fetch("http://localhost:5000/api/user", {
+        await fetch("https://zoom-app-y1hh.onrender.com/api/user", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -38,7 +38,7 @@ function App() {
           body: JSON.stringify({ name }),
         });
   
-        const res = await fetch("http://localhost:5000/api/hello");
+        const res = await fetch("https://zoom-app-y1hh.onrender.com/api/hello");
         const data = await res.json();
         setBackendMessage(data.message);
       } catch (err) {
